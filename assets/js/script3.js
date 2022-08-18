@@ -1,11 +1,9 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-// This will be easier to do in HTML/CSS. Do it last.
-// Center a flexbox in a main section of the body. Add a user form. Connext the button on the form to the script here. 
-// event listener "click"
+var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 var finalPassword = ""
 
@@ -19,7 +17,6 @@ function generatePassword() {
     var password = "";
     var passCat = ["letters", "capLetters", "ints", "special"];
     var passContent = [];
-
 
     // test random variable properties
     var letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -40,7 +37,7 @@ function generatePassword() {
 
     // WHEN prompted for password criteria
     // THEN I select which criteria to include in the password
-    window.alert("I'm glad to hear you're taking your security seriously. \n Let me ask you some additional questions. . .");
+    window.alert("I'm glad to hear you're taking your security seriously. \n\nLet me ask you some additional questions. . .");
 
     // WHEN prompted for the length of the password
     // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -159,7 +156,7 @@ function generatePassword() {
             }
         } 
         
-        // function addNCase() {
+        // Check NCase() {
             if (nCase === true) {
                 randint = ints[Math.floor(Math.random() * ints.length)];
                 frontBack = Math.floor(Math.random() * 2) + 1;
@@ -172,7 +169,7 @@ function generatePassword() {
                 }
             } 
 
-        // add sCase
+        // Check sCase
         if (sCase === true) {
             randspc = special[Math.floor(Math.random() * special.length)];
             frontBack = Math.floor(Math.random() * 2) + 1;
@@ -183,12 +180,12 @@ function generatePassword() {
                 password = randspc + password;
             }
         } 
+
         console.log(password)
         finalPassword = password
         console.log(finalPassword)
-    }
 
-   
+    }
 
 // Write password to the #password input
 function writePassword() {
@@ -198,5 +195,3 @@ function writePassword() {
     passwordText.value = finalPassword;
   }
   
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
