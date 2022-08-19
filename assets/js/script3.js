@@ -41,7 +41,7 @@ function generatePassword() {
 
     // WHEN prompted for the length of the password
     // THEN I choose a length of at least 8 characters and no more than 128 characters
-    passLength = window.prompt("How long should your new password be? Please choose a number between 8 and 128 characters.");
+    passLength = window.prompt("How long should your new password be? \nPlease choose a number between 8 and 128.");
     console.log("Chosen passLength: " + passLength);
     console.log(isNaN(passLength))
     
